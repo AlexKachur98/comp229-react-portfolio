@@ -1,11 +1,14 @@
-/** @file ContactForm.jsx
- *  @purpose Controlled form that captures user input and redirects to Home with a flash message.
- *  @details For now we log/store data locally.
+/**
+ * @file ContactForm.jsx
+ * @purpose Controlled form to capture contact messages and redirect to Home.
+ * @description Demonstrates hook + form handling pattern.
+ * @autho Alex Kachur
+ * @since 2025-09-17
  */
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-/** Simple email check */
 const isEmail = (v) => /\S+@\S+\.\S+/.test(v)
 
 export default function ContactForm() {
@@ -13,10 +16,8 @@ export default function ContactForm() {
     const [errors, setErrors] = useState({})
     const navigate = useNavigate()
 
-    /** Handle input updates (one handler for all fields) */
     const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-    /** Validate minimal required fields */
     const validate = () => {
         const next = {}
         if (!form.firstName.trim()) next.firstName = 'First name required'
@@ -26,16 +27,11 @@ export default function ContactForm() {
         return Object.keys(next).length === 0
     }
 
-    /** Handle submit: capture, store locally for demo, then redirect home with flash text. */
     const onSubmit = (e) => {
         e.preventDefault()
         if (!validate()) return
-        // Demo "capture": save to localStorage and console for now.
         const messages = JSON.parse(localStorage.getItem('messages') || '[]')
         localStorage.setItem('messages', JSON.stringify([...messages, { ...form, at: new Date().toISOString() }]))
-        console.log('Captured contact:', form)
-
-        // Redirect back to Home with a flash message (visible in SiteLayout via useLocation state)
         navigate('/', { state: { flash: 'Thanks! Your message was captured.' } })
     }
 

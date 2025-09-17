@@ -1,9 +1,14 @@
-/* @file index.css
-   @purpose Global site styles for my React Portfolio
-   @notes Includes layout, nav, buttons, cards, forms, and Home Hero design
-*/
+/**
+ * @file index.css
+ * @purpose Global styles for my React Portfolio
+ * @description Includes base styles, layout, hero section, cards, forms, and full light/dark theme support.
+ * @autho Alex Kachur
+ * @since 2025-09-17
+ */
 
-/* Global resets */
+/* ------------------------------
+   Global Reset + Base Typography
+-------------------------------*/
 :root {
   color-scheme: light dark;
 }
@@ -16,13 +21,15 @@ body {
   margin: 0 auto;
   padding: 1rem;
   max-width: 1080px;
-  font-family: system-ui, Segoe UI, Roboto, Arial;
+  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.55;
   background: #fafafa;
   color: #222;
 }
 
-/* Header + Navigation */
+/* ------------------------------
+   Header + Navigation
+-------------------------------*/
 .site-header {
   display: flex;
   align-items: center;
@@ -42,17 +49,18 @@ body {
   margin-left: 0.9rem;
   text-decoration: none;
   color: #222;
+  transition: color 0.2s ease;
 }
 
 .site-nav a:hover {
   text-decoration: underline;
+  color: #0ea5e9;
+  /* cyan accent */
 }
 
-/* Main + Footer */
-.site-main {
-  padding: 1.5rem 0 2.5rem;
-}
-
+/* ------------------------------
+   Footer
+-------------------------------*/
 .site-footer {
   border-top: 1px solid #ddd;
   padding-top: 0.75rem;
@@ -60,7 +68,16 @@ body {
   text-align: center;
 }
 
-/* Buttons */
+/* ------------------------------
+   Main Content Area
+-------------------------------*/
+.site-main {
+  padding: 1.5rem 0 2.5rem;
+}
+
+/* ------------------------------
+   Buttons
+-------------------------------*/
 .btn {
   display: inline-block;
   padding: 0.5rem 0.9rem;
@@ -68,6 +85,7 @@ body {
   border-radius: 8px;
   text-decoration: none;
   background: white;
+  color: #222;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-right: 0.5rem;
@@ -87,7 +105,20 @@ body {
   background: #0284c7;
 }
 
-/* Flash messages */
+.btn.secondary {
+  background: #a855f7;
+  /* purple */
+  border-color: #a855f7;
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: #9333ea;
+}
+
+/* ------------------------------
+   Flash Messages
+-------------------------------*/
 .flash {
   background: #e6ffed;
   border: 1px solid #b2f2bb;
@@ -97,7 +128,9 @@ body {
   font-size: 0.95rem;
 }
 
-/* Grid utilities */
+/* ------------------------------
+   Grid Utilities
+-------------------------------*/
 .grid {
   display: grid;
   gap: 1rem;
@@ -120,7 +153,9 @@ body {
   }
 }
 
-/* Cards */
+/* ------------------------------
+   Cards
+-------------------------------*/
 .card {
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -156,13 +191,20 @@ body {
   padding: 0.1rem 0.5rem;
 }
 
-/* Contact panel + forms */
+/* ------------------------------
+   Contact Panel + Forms
+-------------------------------*/
 .contact-panel {
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 0.75rem;
   margin-bottom: 1rem;
   background: #fff;
+}
+
+.contact-panel p {
+  margin: 0.25rem 0;
+  color: #222;
 }
 
 label {
@@ -177,6 +219,13 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 0.95rem;
+  background: #fff;
+  color: #222;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #0ea5e9;
 }
 
 .error {
@@ -186,7 +235,9 @@ textarea {
   font-size: 0.85rem;
 }
 
-/* --- New Home Hero Section --- */
+/* ------------------------------
+   Home Hero Section
+-------------------------------*/
 .home-hero {
   display: grid;
   gap: 2rem;
@@ -217,7 +268,6 @@ textarea {
 
 .highlight {
   color: #0ea5e9;
-  /* Cyan blue accent */
 }
 
 .hero-passions {
@@ -241,4 +291,118 @@ textarea {
 .hero-passions li {
   margin: 0.4rem 0;
   font-size: 1rem;
+}
+
+/* ------------------------------
+   Theme Support (Dark Mode)
+-------------------------------*/
+body[data-theme='light'] {
+  background: #fafafa;
+  color: #222;
+}
+
+body[data-theme='dark'] {
+  background: #1a1a1a;
+  color: #f1f1f1;
+}
+
+/* Nav links */
+body[data-theme='dark'] .site-nav a {
+  color: #f1f1f1;
+}
+
+body[data-theme='dark'] .site-nav a:hover {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+/* Sub-headings + muted text */
+body[data-theme='dark'] .hero-content h2,
+body[data-theme='dark'] .muted {
+  color: #aaa;
+}
+
+/* Contact panel */
+body[data-theme='dark'] .contact-panel {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body[data-theme='dark'] .contact-panel p {
+  color: #f1f1f1;
+}
+
+/* Form inputs */
+body[data-theme='dark'] input,
+body[data-theme='dark'] textarea {
+  background: #333;
+  border-color: #555;
+  color: #f1f1f1;
+}
+
+body[data-theme='dark'] input::placeholder,
+body[data-theme='dark'] textarea::placeholder {
+  color: #aaa;
+}
+
+/* Cards */
+body[data-theme='dark'] .card {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body[data-theme='dark'] .tags li {
+  border-color: #555;
+  color: #ccc;
+}
+
+/* Hero Passions box */
+body[data-theme='dark'] .hero-passions {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body[data-theme='dark'] .hero-passions h3 {
+  color: #f1f1f1;
+}
+
+body[data-theme='dark'] .hero-passions li {
+  color: #ddd;
+}
+
+/* Footer */
+body[data-theme='dark'] .site-footer {
+  color: #aaa;
+  border-color: #444;
+}
+
+/* Buttons */
+body[data-theme='dark'] .btn {
+  background: #333;
+  border-color: #555;
+  color: #f1f1f1;
+}
+
+body[data-theme='dark'] .btn:hover {
+  background: #444;
+}
+
+body[data-theme='dark'] .btn.primary {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: white;
+}
+
+body[data-theme='dark'] .btn.primary:hover {
+  background: #0284c7;
+}
+
+body[data-theme='dark'] .btn.secondary {
+  background: #a855f7;
+  border-color: #a855f7;
+  color: white;
+}
+
+body[data-theme='dark'] .btn.secondary:hover {
+  background: #9333ea;
 }

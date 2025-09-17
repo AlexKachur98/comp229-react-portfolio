@@ -1,13 +1,19 @@
-/** @file projects.js
- *  @purpose Centralized portfolio data.
- *  @pattern list+keys mapping with stable IDs.
+/**
+ * @file projects.js
+ * @purpose Centralized project data for portfolio.
+ * @description Each project includes id, title, summary, tags, image, and details.
+ *              This supports Projects list and ProjectDetails page.
+ * @author
+ * @since 2025-09-17
  */
+
 export const projects = [
     {
         id: 'p1',
         title: 'C# Hangman Game',
-        summary:
-            'A council-based guessing game written in C#. Players try to solve the word puzzle with limited attempts, showcasing object-oriented design and event handling.',
+        summary: 'A council-based word guessing game built in C#.',
+        details:
+            'This was one of my first C# projects where I applied object-oriented programming concepts to build a simple but fun Hangman game. It reinforced my knowledge of loops, conditionals, and event handling in Windows console apps.',
         image: 'https://via.placeholder.com/640x360.png?text=Hangman+Game',
         tags: ['c#', 'oop', 'game'],
     },
@@ -15,15 +21,18 @@ export const projects = [
         id: 'p2',
         title: 'Prestige Exotics Website',
         summary:
-            'An exotic car dealership site built with HTML, CSS, and JavaScript. Features jQuery animations, image galleries, and a gold-and-midnight-blue theme.',
+            'A luxury car dealership website using HTML, CSS, JavaScript, and jQuery.',
+        details:
+            'This project applied my frontend web dev skills to create an exotic car showcase. I used HTML and CSS for structure and styling, JavaScript for interactivity, and jQuery animations for gallery effects. Theme colors: gold + midnight blue.',
         image: 'https://via.placeholder.com/640x360.png?text=Prestige+Exotics',
         tags: ['html', 'css', 'javascript', 'jquery'],
     },
     {
         id: 'p3',
-        title: 'UniLabBooker SRS Project',
-        summary:
-            'A detailed Software Requirements Specification for a lab-equipment booking system. Includes stakeholder registry, functional/non-functional requirements, and UML diagrams.',
+        title: 'UniLabBooker SRS',
+        summary: 'A Software Requirements Specification for a lab-booking system.',
+        details:
+            'This was a group SRS project where I worked on stakeholder registry, FR/NFR requirements, UML diagrams, and sequence flows. It taught me documentation standards (IEEE), collaboration, and aligning requirements with system design.',
         image: 'https://via.placeholder.com/640x360.png?text=UniLabBooker+SRS',
         tags: ['srs', 'uml', 'requirements'],
     },
