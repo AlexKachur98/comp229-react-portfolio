@@ -1,0 +1,244 @@
+/* @file index.css
+   @purpose Global site styles for my React Portfolio
+   @notes Includes layout, nav, buttons, cards, forms, and Home Hero design
+*/
+
+/* Global resets */
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 1080px;
+  font-family: system-ui, Segoe UI, Roboto, Arial;
+  line-height: 1.55;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Header + Navigation */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-nav a {
+  margin-left: 0.9rem;
+  text-decoration: none;
+  color: #222;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main + Footer */
+.site-main {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.site-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 0.75rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.btn:hover {
+  background: #f1f5f9;
+}
+
+.btn.primary {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #0284c7;
+}
+
+/* Flash messages */
+.flash {
+  background: #e6ffed;
+  border: 1px solid #b2f2bb;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.grid-2 {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 0.8rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.tags li {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  border: 1px solid #eee;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+/* Contact panel + forms */
+.contact-panel {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.error {
+  color: #b00020;
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* --- New Home Hero Section --- */
+.home-hero {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.hero-content {
+  max-width: 540px;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin: 0.25rem 0;
+}
+
+.hero-content h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0.25rem 0 1rem;
+  color: #555;
+}
+
+.hero-content p {
+  margin-bottom: 0.75rem;
+}
+
+.highlight {
+  color: #0ea5e9;
+  /* Cyan blue accent */
+}
+
+.hero-passions {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.hero-passions h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.hero-passions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-passions li {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+}
