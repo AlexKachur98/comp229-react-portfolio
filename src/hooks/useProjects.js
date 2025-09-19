@@ -27,7 +27,7 @@ export function useProjects() {
                         image: '/images/project-hangman.jpg',
                         details:
                             'A straightforward Hangman console app where I practiced classes, loops, and state management. The focus was on creating clean, readable methods and handling user input gracefully.',
-                        github: 'https://github.com/AlexKachur98/Hangman',
+                        github: 'https://github.com/AlexKachur98/Hangman', // Placeholder link
                     },
                     {
                         id: 'p2',
@@ -37,8 +37,8 @@ export function useProjects() {
                         image: '/images/project-exotics.jpg',
                         details:
                             'This project involved building responsive cards, gallery modals, and smooth jQuery transitions. I focused on a polished color theme (gold/midnight) and clear calls to action.',
-                        demo: '#',
-                        github: '#',
+                        demo: 'https://studentweb.cencol.ca/akachur/COMP125%20Assignment%2006/home.html',
+                        github: '#', // Placeholder link
                     },
                     {
                         id: 'p3',
@@ -48,7 +48,7 @@ export function useProjects() {
                         image: '/images/project-srs.jpg',
                         details:
                             'This was a collaborative SRS document following IEEE standards. My role involved defining stakeholders, functional/non-functional requirements, use cases, and sequence diagrams, strengthening my documentation skills.',
-                        github: '#',
+                        github: '#', // Placeholder link
                     },
                 ])
             } catch (e) {
