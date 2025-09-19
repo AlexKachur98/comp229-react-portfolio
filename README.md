@@ -3,7 +3,6 @@
 This is my personal portfolio website, built as a project for the COMP229 Web Application Development course at Centennial College. It's a modern, responsive single-page application (SPA) created with React, Vite, and React Router.
 
 **Live Demo:** [`https://comp229-react-portfolio-1d8e.onrender.com`](https://comp229-react-portfolio-1d8e.onrender.com) 
-*(Note: Remember to update this link after you deploy Version 2!)*
 
 ---
 
