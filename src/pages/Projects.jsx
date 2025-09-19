@@ -1,38 +1,72 @@
 /**
  * @file Projects.jsx
- * @purpose Displays all portfolio projects with a search filter.
- * @description Uses useState hook to filter projects by query string.
- * @autho Alex Kachur
- * @since 2025-09-17
- */
-
-import { useState } from 'react'
+ * @purpose Filterable project gallery using ProjectCard
+ * @description Controlled inputs + derived state (useMemo). Includes search + tag chips.
+ * */
+import { useMemo, useState } from 'react'
 import ProjectCard from '../components/ProjectCard.jsx'
-import { projects } from '../data/projects.js'
+import { useProjects } from '../hooks/useProjects.js'
+
+const TAGS = ['all', 'react', 'node', 'design', 'c#', 'javascript', 'jquery', 'uml', 'requirements']
 
 export default function Projects() {
-    const [query, setQuery] = useState('')
+    const { data, loading, error } = useProjects()
+    const [q, setQ] = useState('')
+    const [tag, setTag] = useState('all')
 
-    const filtered = projects.filter((p) =>
-        p.title.toLowerCase().includes(query.toLowerCase()) ||
-        p.summary.toLowerCase().includes(query.toLowerCase()) ||
-        p.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
-    )
+    const filtered = useMemo(() => {
+        const query = q.trim().toLowerCase()
+        return data.filter(p => {
+            const textHit =
+                !query ||
+                p.title.toLowerCase().includes(query) ||
+                p.summary.toLowerCase().includes(query)
+            const tagHit = tag === 'all' || (p.tags || []).includes(tag)
+            return textHit && tagHit
+        })
+    }, [data, q, tag])
 
     return (
-        <section>
-            <h2>Projects</h2>
-            <input
-                type="text"
-                placeholder="Search projects..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                style={{ padding: '0.5rem', marginBottom: '1rem', width: '100%' }}
-            />
-            <div className="grid">
-                {filtered.length
-                    ? filtered.map(p => <ProjectCard key={p.id} {...p} />)
-                    : <p>No projects match your search.</p>}
+        <section className="section">
+            <div className="container flow">
+                <h2>Projects</h2>
+
+                {/* Controls */}
+                <div className="controls">
+                    <label className="sr-only" htmlFor="search">Search projects</label>
+                    <input
+                        id="search"
+                        className="input"
+                        type="search"
+                        placeholder="Search by title or summary…"
+                        value={q}
+                        onChange={(e) => setQ(e.target.value)}
+                    />
+
+                    <div className="chips" role="tablist" aria-label="Filter by tag">
+                        {TAGS.map(t => (
+                            <button
+                                key={t}
+                                role="tab"
+                                aria-selected={tag === t}
+                                className={`chip ${tag === t ? 'chip--active' : ''}`}
+                                onClick={() => setTag(t)}
+                            >
+                                {t}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* States */}
+                {loading && <p>Loading…</p>}
+                {error && <p className="error">Failed to load projects.</p>}
+                {!loading && !error && filtered.length === 0 && <p className="muted">No matches.</p>}
+
+                {/* Grid */}
+                <div className="grid">
+                    {filtered.map(p => <ProjectCard key={p.id} {...p} />)}
+                </div>
             </div>
         </section>
     )

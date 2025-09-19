@@ -1,16 +1,48 @@
-/** @file Services.jsx
- *  @purpose Short list of services.
+/**
+ * @file Services.jsx
+ * @purpose Displays the services offered in a clean, card-based grid.
+ * @description Renders a list of services by mapping over an array and using
+ * a reusable ServiceCard component for consistency and maintainability.
+ * @author Alex Kachur
+ * @since 2025-09-17
  */
+import ServiceCard from '../components/ServiceCard.jsx';
+
+// Centralized data for services
+const services = [
+    {
+        title: 'General Programming',
+        description: 'C#, Java, some Python — clean, readable problem solving.'
+    },
+    {
+        title: 'Web Development',
+        description: 'HTML, CSS, JavaScript, jQuery, React, Node.js — responsive and accessible UIs.'
+    },
+    {
+        title: 'Custom PCs',
+        description: 'Parts selection, builds, optimization — budget to high-end rigs.'
+    },
+    {
+        title: 'Peer Mentorship',
+        description: 'Help classmates learn faster — code reviews, study tips, debugging.'
+    },
+];
+
 export default function Services() {
     return (
-        <section>
-            <h2>Services</h2>
-            <ul className="services">
-                <li><strong>General Programming</strong> — C#, Java, some Python.</li>
-                <li><strong>Web Development</strong> — HTML, CSS, JavaScript, jQuery, React, Node.js.</li>
-                <li><strong>Custom PCs</strong> — Building and optimizing high-performance systems.</li>
-                <li><strong>Peer Mentorship</strong> — Supporting classmates with coding, labs, and project help.</li>
-            </ul>
+        <section className="section">
+            <div className="container flow">
+                <h2>Services</h2>
+                <div className="grid">
+                    {services.map(service => (
+                        <ServiceCard
+                            key={service.title}
+                            title={service.title}
+                            description={service.description}
+                        />
+                    ))}
+                </div>
+            </div>
         </section>
-    )
+    );
 }
