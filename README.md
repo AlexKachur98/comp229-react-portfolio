@@ -25,26 +25,14 @@ This is my personal portfolio website, built as a project for the COMP229 Web Ap
 
 ---
 
-## 🚀 Version 2.0 Upgrade Report
+## 🚀 Version 2.1 Upgrade Report
 
-This version represents a complete overhaul of the initial project (v1.2), focusing on enhanced design, functionality, and code quality.
+### Project Integration
+* Uploaded the C# Hangman and Prestige Exotics projects to their own GitHub repositories.
+* Update the "GitHub" links on the portfolio to point to these new, live repositories.
 
-### Visual & UX Enhancements
-* **Professional Design System:** Migrated from basic styling to a cohesive, modern UI using a CSS variable system for colors, spacing, and a dual-theme (light/dark) experience.
-* **Responsive Navigation:** Rebuilt the navbar to be sticky, semi-transparent, and fully responsive with a hamburger menu for mobile.
-* **Upgraded Layout:** Implemented a sticky footer and consistent container-based layout for a more professional look.
-* **Interactive Elements:** Added a "lift on hover" effect to cards and a "reveal-on-scroll" animation to the home page hero section.
-
-### Functional Upgrades
-* **Dynamic Project Pages:** Added a dynamic route (`/projects/:id`) so each project can have a detailed view page.
-* **Project Filtering:** The Projects page now includes live search and tag filtering capabilities.
-* **Interactive Contact Form:** The form now includes full client-side validation and state management.
-
-### Code Architecture & Quality
-* **Refactored with Custom Hooks:** Centralized project data into a `useProjects.js` hook to decouple logic from the UI and prepare for a future API connection.
-* **Component Reusability:** Broke down repeated UI elements (like the service items) into a reusable `ServiceCard.jsx` component to keep the code DRY.
-* **Performance Optimization:** Implemented the `useMemo` hook to ensure the project filtering logic only runs when necessary, improving performance.
-* **File Cleanup:** Removed all unused starter files and dependencies for a leaner, more professional codebase.
+### Contact Form Hyperlinks
+* Made the email and phone number in the **Contact** page's info panel clickable using `mailto:` and `tel:` hyperlinks.
 
 ---
 
@@ -60,16 +48,9 @@ This version represents a complete overhaul of the initial project (v1.2), focus
     -   Incorporate technology logos (React, Node.js, etc.) into the **Services** section.
     -   Replace the generated placeholder images for projects with high-quality, final screenshots.
 
-- [ ] **Project Integration:**
-    -   Upload the C# Hangman and Prestige Exotics projects to their own GitHub repositories.
-    -   Update the "GitHub" links on the portfolio to point to these new, live repositories.
-
 - [ ] **Services Page Expansion:**
     -   Convert each service on the **Services** page into a link (e.g., `/services/web-development`).
     -   Create a unique details page for each service, explaining the process, tools used, and potential outcomes.
-
-- [ ] **Contact Form Hyperlinks:**
-    -   Make the email and phone number in the **Contact** page's info panel clickable using `mailto:` and `tel:` hyperlinks.
 
 - [ ] **(Top-Notch) Connect to a Backend:**
     -   Migrate the static project data from `useProjects.js` to the Node.js/Express/MongoDB API from Week 1 of the course.
