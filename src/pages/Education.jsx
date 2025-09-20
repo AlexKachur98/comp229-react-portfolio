@@ -1,6 +1,8 @@
 /**
  * @file Education.jsx
  * @purpose Displays education timeline/cards
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Clean, resume-like layout (minimalist + professional). ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼ */
 export default function Education() {
     return (

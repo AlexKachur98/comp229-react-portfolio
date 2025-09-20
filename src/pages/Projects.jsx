@@ -1,6 +1,8 @@
 /**
  * @file Projects.jsx
  * @purpose Filterable project gallery using ProjectCard
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Controlled inputs + derived state (useMemo). Includes search + tag chips.
  * */
 import { useMemo, useState } from 'react'

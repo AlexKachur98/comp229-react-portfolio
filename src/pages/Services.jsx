@@ -1,10 +1,10 @@
 /**
  * @file Services.jsx
  * @purpose Displays the services offered in a clean, card-based grid.
- * @description Renders a list of services by mapping over an array and using
- * a reusable ServiceCard component for consistency and maintainability.
  * @author Alex Kachur
  * @since 2025-09-17
+ * @description Renders a list of services by mapping over an array and using
+ * a reusable ServiceCard component for consistency and maintainability.
  */
 import ServiceCard from '../components/ServiceCard.jsx';
 

@@ -1,6 +1,8 @@
 /**
  * @file Contact.jsx
  * @purpose Accessible, validated contact form
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Controlled inputs + basic validation. Ready for EmailJS or API later.
  */
 import { useState } from 'react'
@@ -39,9 +41,9 @@ export default function Contact() {
                 <div className="grid-2">
                     {/* Contact info panel */}
                     <div className="contact-panel">
-                        <p><strong>Email:</strong> akachur@my.centennialcollege.ca</p>
-                        <p><strong>Phone:</strong> 647-281-2180</p>
-                        <p><strong>Location:</strong> Thornhill • GTA</p>
+                        <p><strong>Email:</strong> <a href="mailto:akachur@my.centennialcollege.ca">akachur@my.centennialcollege.ca</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:647-281-2180">647-281-2180</a></p>
+                        <p><strong>Location:</strong> Toronto • Canada</p>
                     </div>
 
                     {/* Form */}

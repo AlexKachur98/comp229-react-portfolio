@@ -1,6 +1,8 @@
 /**
  * @file Home.jsx
  * @purpose Hero/landing page with hierarchy + CTAs
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Uses IntersectionObserver to reveal content.
  */
 import { useEffect, useRef } from 'react'

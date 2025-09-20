@@ -1,6 +1,8 @@
 /**
  * @file NotFound.jsx
  * @purpose Simple 404 page
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Keeps UX friendly and provides a fast route back Home. ￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼ */
 import { Link } from 'react-router-dom'
 

@@ -1,6 +1,8 @@
 /**
  * @file useProjects.js
  * @purpose Custom hook to provide project data throughout the application.
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Encapsulates the logic for fetching project data. This pattern makes
  * it easy to switch to a real API fetch later without changing components.
  * Currently simulates a network request with a short delay.
@@ -27,7 +29,7 @@ export function useProjects() {
                         image: '/images/project-hangman.jpg',
                         details:
                             'A straightforward Hangman console app where I practiced classes, loops, and state management. The focus was on creating clean, readable methods and handling user input gracefully.',
-                        github: 'https://github.com/AlexKachur98/Hangman', // Placeholder link
+                        github: 'https://github.com/AlexKachur98/csharp-hangman-game',
                     },
                     {
                         id: 'p2',
@@ -38,7 +40,7 @@ export function useProjects() {
                         details:
                             'This project involved building responsive cards, gallery modals, and smooth jQuery transitions. I focused on a polished color theme (gold/midnight) and clear calls to action.',
                         demo: 'https://studentweb.cencol.ca/akachur/COMP125%20Assignment%2006/home.html',
-                        github: '#', // Placeholder link
+                        github: 'https://github.com/AlexKachur98/comp125-dealership-website',
                     },
                     {
                         id: 'p3',
@@ -47,8 +49,9 @@ export function useProjects() {
                         tags: ['srs', 'uml', 'requirements'],
                         image: '/images/project-srs.jpg',
                         details:
-                            'This was a collaborative SRS document following IEEE standards. My role involved defining stakeholders, functional/non-functional requirements, use cases, and sequence diagrams, strengthening my documentation skills.',
-                        github: '#', // Placeholder link
+                            'This was a collaborative SRS document following IEEE standards. My role involved leading the creation of UML use cases and sequence diagrams, which clarified the system\'s logic for both the stakeholders and the development team. The outcome was a comprehensive and approved specification document that served as the blueprint for the project.',
+                        download: '/documents/UniLabBooker-SRS.pdf',
+                        github: 'https://github.com/AlexKachur98/unilabbooker-srs',
                     },
                 ])
             } catch (e) {

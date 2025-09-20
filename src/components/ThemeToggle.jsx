@@ -1,10 +1,10 @@
 /**
  * @file ThemeToggle.jsx
  * @purpose A button to toggle between light and dark color themes.
+ * @author Alex Kachur
+ * @since 2025-09-17
  * @description Manages theme state, persists choice in localStorage, applies the
  * theme to the <body>, and dynamically updates the page's favicon.
- * @author Alex Kachur
- * @since 2025-09-19
  */
 import { useEffect, useState } from 'react';
 
@@ -26,7 +26,7 @@ export default function ThemeToggle() {
             link.rel = 'icon';
             document.head.appendChild(link);
         }
-        link.href = `/favicon-${theme}.png`;
+        link.href = `/images/favicon-${theme}.png`;
 
     }, [theme]);
 

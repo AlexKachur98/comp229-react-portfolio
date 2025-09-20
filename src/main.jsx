@@ -1,9 +1,9 @@
 /**
  * @file main.jsx
  * @purpose App entry point (Vite + React 18)
- * @description Mounts the React tree, wires React Router, and loads global styles.
  * @author Alex Kachur
  * @since 2025-09-17
+ * @description Mounts the React tree, wires React Router, and loads global styles.
  */
 
 import React from 'react'

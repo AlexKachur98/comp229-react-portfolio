@@ -1,6 +1,10 @@
 /**
  * @file Navbar.jsx
  * @purpose Responsive top navigation with active link styles + theme toggle
+ * @author Alex Kachur
+ * @since 2025-09-17
+ * @description Uses NavLink for active styles, a button for the hamburger menu,
+ * and a state hook to toggle visibility on mobile.
  */
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'

@@ -32,7 +32,7 @@ export default function About() {
                     </p>
 
                     <div className="about__cta">
-                        <a className="btn btn--primary" href="/resume.pdf" target="_blank" rel="noreferrer">
+                        <a className="btn btn--primary" href="/documents/resume.pdf" target="_blank" rel="noreferrer">
                             Download Resume
                         </a>
                     </div>
