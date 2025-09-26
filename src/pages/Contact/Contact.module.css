@@ -1,19 +1,40 @@
 /*
- * Contact.module.css
- * Scoped styles for the Contact page grid and form.
+ * @file Contact.module.css
+ * @purpose Scoped styles for the Contact page info + form layout. 
+ * @autho Alex Kachur
+ * @since 2025-09-26
  */
+
 .grid2 {
     display: grid;
-    gap: 2rem;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
 }
 
 @media (min-width: 720px) {
     .grid2 {
         grid-template-columns: 1fr 1fr;
-        align-items: center;
+        align-items: flex-start;
     }
 }
 
+/* Info column */
+.info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+/* Extra CTA button under contact info */
+.extraCta {
+    margin-top: 1rem;
+}
+
+/* Form */
 .form {
     padding: 20px;
     background: var(--surface);
@@ -57,6 +78,7 @@
     min-height: 140px;
 }
 
+/* Notice and error summary */
 .notice {
     padding: 12px 14px;
     background: var(--brand-soft);

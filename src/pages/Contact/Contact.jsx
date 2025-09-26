@@ -1,12 +1,13 @@
 /**
  * @file Contact.jsx
- * @purpose Accessible, validated contact form with error summary and success state. 
+ * @purpose Accessible, polished contact page with info, form, and CTA to services. 
  * @author Alex Kachur
  * @since 2025-09-17
- * @description Controlled inputs with validation. Includes aria-describedby, 
- * error summary for accessibility, and auto-focus on first invalid field.
+ * @updated 2025-09-26
+ * @description Includes validated form, error summary, icons, and services link. 
  */
 import { useState, useMemo, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
 import styles from './Contact.module.css';
 
@@ -52,13 +53,19 @@ export default function Contact() {
         <AnimatedPage>
             <div className="container">
                 <h2>Contact</h2>
+                <p className="lead">Whether you’re looking to collaborate, discuss a project, or just say hi — feel free to reach out!</p>
                 <div className={styles.grid2}>
-                    <div className="flow">
-                        <p><strong>Email:</strong> <a href="mailto:akachur@my.centennialcollege.ca">akachur@my.centennialcollege.ca</a></p>
-                        <p><strong>Phone:</strong> <a href="tel:647-281-2180">647-281-2180</a></p>
-                        <p><strong>Location:</strong> Toronto • Canada</p>
+                    {/* Left column — Info */}
+                    <div className={`flow ${styles.info}`}>
+                        <p><span className={styles.icon}>📧</span><strong>Email:</strong> <a href="mailto:akachur@my.centennialcollege.ca">akachur@my.centennialcollege.ca</a></p>
+                        <p><span className={styles.icon}>📞</span><strong>Phone:</strong> <a href="tel:647-281-2180">647-281-2180</a></p>
+                        <p><span className={styles.icon}>📍</span><strong>Location:</strong> Toronto • Canada</p>
+                        <div className={styles.extraCta}>
+                            <Link to="/services" className="btn">View Services</Link>
+                        </div>
                     </div>
 
+                    {/* Right column — Form */}
                     <form className={styles.form} onSubmit={onSubmit} noValidate>
                         {sent && <div className={styles.notice} role="status">Thanks! Your message was captured.</div>}
 

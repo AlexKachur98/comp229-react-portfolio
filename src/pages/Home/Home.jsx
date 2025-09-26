@@ -1,7 +1,7 @@
 /**
  * @file Home.jsx
  * @purpose Hero landing page with introduction and CTAs. 
- * @author Alex Kachur
+ * @autho Alex Kachur
  * @since 2025-09-17
  * @description Uses Framer Motion variants for smooth reveal animation 
  * and CSS Modules for scoped styling.
@@ -33,6 +33,7 @@ export default function Home() {
                 >
                     Alex Kachur
                 </motion.h1>
+
                 <motion.p
                     className={`lead ${styles.tagline}`}
                     variants={variants}
@@ -40,9 +41,10 @@ export default function Home() {
                     animate="show"
                     custom={0.4}
                 >
-                    Software Engineering Technology @ Centennial <br />
-                    React & Node.js • Poker • Video Games • Board Games • Custom PC Builder 💻
+                    Software Engineering Technology Student @ Centennial College <br />
+                    Focused on building clean, accessible, and modern web applications with React & Node.js.
                 </motion.p>
+
                 <motion.div
                     className={styles.cta}
                     variants={variants}
@@ -51,7 +53,7 @@ export default function Home() {
                     custom={0.6}
                 >
                     <Link to="/projects" className="btn btn--primary">View Projects</Link>
-                    <Link to="/about" className="btn">About Me</Link>
+                    <Link to="/about" className="btn">Learn More About Me</Link>
                 </motion.div>
             </div>
         </AnimatedPage>

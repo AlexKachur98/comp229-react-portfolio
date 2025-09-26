@@ -1,0 +1,44 @@
+/*
+ * @file Education.module.css
+ * @purpose Scoped styles for the Education page layout, with rotated logo. 
+ * @author Alex K
+ * @since 2025-09-26
+ */
+.education {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .education {
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.media {
+    justify-self: center;
+}
+
+.logo {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.education h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.education ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.2rem;
+    list-style: disc;
+    color: var(--text-muted);
+}
+
+.cta {
+    margin-top: 1.5rem;
+}

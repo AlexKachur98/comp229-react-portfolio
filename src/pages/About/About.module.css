@@ -21,7 +21,10 @@
 }
 
 .cta {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .headshot {

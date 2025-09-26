@@ -21,7 +21,7 @@ This is my personal portfolio website, built as a project for the COMP229 Web Ap
 - **Frontend:** React 18, Vite, React Router v6, Framer Motion  
 - **Styling:** Hybrid CSS (global utilities + CSS Modules for scoped styles)  
 - **Linting:** ESLint with React, React Hooks, JSX a11y  
-- **Deployment:** Render
+- **Deployment:** Render  
 
 ---
 
@@ -44,45 +44,63 @@ npm run preview
 
 ---
 
-## 🚀 Version 2.3 Upgrade
-This version introduces a major refactor and polish:
+## 📦 Version History
 
-### Architecture
-- Adopted **folder-per-component/page** structure for scalability.  
-- Migrated to **CSS Modules** for component-scoped styles.  
-- Centralized project data into `projects.js` + custom hook `useProjects.js`.  
+### Version 2.4 (2025-09-26) — **Content & Layout Polish**
+This release focused on content expansion and professional polish before backend integration.  
 
-### Animation & UX
-- Introduced **Framer Motion variants** for consistent animation patterns.  
+#### 🏠 Home Page
+- Updated tagline to be more professional.  
+- CTA button changed to **“View Projects”** for clearer navigation.  
+- Improved semantic animation with Framer Motion variants.  
+
+#### 👤 About Page
+- Expanded biography with professional + personal details.  
+- Polished phrasing to reflect passion, career journey, and hobbies.  
+- Added ARIA labeling for resume download link.  
+- Consistent section layout with headshot styling.  
+
+#### 🎓 Education Page
+- Intergraded a clean About-style layout.  
+- Added **Centennial College logo** with vertical rotation.  
+- Expanded details: GPA, program highlights, team projects, UML deliverables, QA, Agile, Git, and DevOps.  
+- Added CTA button linking to **View Projects**.  
+
+#### 📬 Contact Page
+- Reworked layout into two clear sections:  
+  - **Contact Info** with icons + email, phone, location.  
+  - **Contact Form** with improved structure, error handling, and accessibility.  
+- Added introductory text (“Whether you’re looking to collaborate…”).  
+- Auto-focus on first invalid field when submitting.  
+- Refined color scheme for form and error summary.  
+
+---
+
+### Version 2.3 (2025-09-25) — **Refactor & Accessibility**
+- Introduced **Framer Motion variants** for consistent animation.  
 - Added **search query highlighting** on Projects page.  
-- Added **skeleton loaders** for smoother perceived performance.  
+- Improved SEO with `<meta>` description + theme-color.  
+- Added ARIA attributes (`aria-describedby`, `aria-hidden`).  
+- Accessibility improvements to skeleton loaders and error summary.  
 
-### Accessibility & SEO
-- Added `aria-describedby` for form errors and auto-focus on first invalid field.  
-- Added `aria-hidden="true"` to skeleton components.  
-- Improved `index.html` with SEO-friendly `<meta>` tags and theme-color.  
-
-### Image Optimization
-This project uses a lightweight `OptimizedImage` component to improve performance:  
-
-- **WebP first**: If a `.webp` version of an image exists, it will be served to browsers that support it.  
-- **Fallback to original**: If WebP is unsupported or missing, the original `.jpg` or `.png` file is displayed.  
-- All images are stored in `/public/images`, so they are served statically at build time.  
-
-This ensures modern browsers get smaller, optimized images, while older browsers still work with the original format.
+### Version 2.2 (Earlier) — **Architectural Refactor**
+- Migrated to **folder-per-component/page** structure.  
+- Adopted **CSS Modules** for scoped styles.  
+- Introduced custom hook `useProjects`.  
+- Added skeleton loaders and `OptimizedImage` component.  
 
 ---
 
 ## ✅ Roadmap
 - **Content Expansion:**  
-  - Expand **About Me** page with more personal details and philosophy.  
-  - Add more detailed descriptions on **Project Details** pages.  
-  - Expand **Education** with highlights and achievements.  
+  - Expand **About Me** page further with values/philosophy.  
+  - Add more detailed **Project Details** (challenges, learnings).  
+  - Expand **Education** with certificates (e.g., Azure).  
 
 - **Visual Polish:**  
   - Add banner graphics for About and Services pages.  
   - Incorporate technology logos (React, Node.js, etc.) into Services.  
-  - Replace placeholder images with final screenshots.  
+  - Replace placeholder project images with final screenshots.  
 
 - **Full-Stack Integration:**  
   - Build Node.js/Express + MongoDB backend.  
