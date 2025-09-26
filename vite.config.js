@@ -2,9 +2,9 @@
  * @file vite.config.js
  * @purpose Vite build configuration for the React portfolio.
  * @author Alex Kachur
- * @since 2025-09-26
- * @description Includes the React plugin and the image optimization plugin
- * to automatically compress image assets during the build process.
+ * @since 2025-09-17
+ * @description Includes the React plugin, image optimization, and configuration
+ * to allow the production preview to be hosted on Render.
  */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -19,9 +19,13 @@ export default defineConfig({
       jpg: { quality: 80 },
     }),
   ],
-  allowedHosts: [
-
-    'comp229-react-portfolio-1d8e.onrender.com'
-
-  ]
+  // Add this preview configuration block
+  preview: {
+    host: true, // This is often required for Docker-based hosting services
+    port: 8080, // A common port for services like Render
+    strictPort: true,
+    allowedHosts: [
+      'comp229-react-portfolio-1d8e.onrender.com'
+    ]
+  }
 });
