@@ -1,18 +1,46 @@
 /**
  * @file Services.jsx
- * @purpose Showcases offered services in card layout. 
+ * @purpose Showcases offered services in card layout with tech logos. 
  * @author Alex Kachur
- * @since 2025-09-17
- * @description Uses ServiceCard component with mapped data array.
+ * @since 2025-09-26
+ * @description Uses ServiceCard component with mapped data array. 
+ * Logos are stored under /public/images/icons.
  */
 import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
 import ServiceCard from '../../components/ServiceCard/ServiceCard.jsx';
+import styles from './Services.module.css';
 
 const services = [
-    { title: 'General Programming', description: 'C#, Java, some Python — clean, readable problem solving.' },
-    { title: 'Web Development', description: 'HTML, CSS, JavaScript, jQuery, React, Node.js — responsive and accessible UIs.' },
-    { title: 'Custom PCs', description: 'Parts selection, builds, optimization — budget to high-end rigs.' },
-    { title: 'Peer Mentorship', description: 'Help classmates learn faster — code reviews, study tips, debugging.' }
+    {
+        title: 'General Programming',
+        description: 'C#, Java, Python — clean, readable problem solving.',
+        logo: '/images/icons/csharp.svg'
+    },
+    {
+        title: 'Web Development',
+        description: 'React, Node.js, JavaScript — responsive and accessible UIs.',
+        logo: '/images/icons/react.svg'
+    },
+    {
+        title: 'Databases & SQL',
+        description: 'Relational design, queries, and ERDs for normalized schemas.',
+        logo: '/images/icons/sql.svg'
+    },
+    {
+        title: 'Version Control',
+        description: 'Git & GitHub — branching, merging, and collaboration.',
+        logo: '/images/icons/git.svg'
+    },
+    {
+        title: 'Custom PCs',
+        description: 'Parts selection, builds, optimization — budget to high-end rigs.',
+        logo: '/images/icons/pc.svg'
+    },
+    {
+        title: 'Peer Mentorship',
+        description: 'Helping classmates learn faster through code reviews, study tips, and debugging.',
+        logo: '/images/icons/mentorship.svg'
+    }
 ];
 
 export default function Services() {
@@ -20,17 +48,20 @@ export default function Services() {
         <AnimatedPage>
             <div className="container flow">
                 <h2>Services</h2>
-                <div className="grid">
+                <div className={styles.servicesGrid}>
                     {services.map(service => (
                         <ServiceCard
                             key={service.title}
                             title={service.title}
                             description={service.description}
+                            logo={service.logo}
                         />
                     ))}
                 </div>
-                <div style={{ marginTop: "1.5rem" }}>
-                    <a href="/contact" className="btn btn--primary">Contact Me About Services</a>
+                <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
+                    <a href="/contact" className="btn btn--primary">
+                        Contact Me About Services
+                    </a>
                 </div>
             </div>
         </AnimatedPage>

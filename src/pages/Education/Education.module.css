@@ -22,10 +22,19 @@
 
 .logo {
     transform: rotate(-90deg);
+    /* rotate counter-clockwise */
     transform-origin: center;
     max-height: 200px;
     object-fit: contain;
 }
+
+@media (max-width: 768px) {
+    .logo {
+        transform: rotate(0);
+        /* reset rotation on mobile/tablet */
+    }
+}
+
 
 .education h3 {
     margin-top: 0;
