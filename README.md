@@ -21,7 +21,7 @@ This is my personal portfolio website, built as a project for the COMP229 Web Ap
 - **Frontend:** React 18, Vite, React Router v6, Framer Motion  
 - **Styling:** Hybrid CSS (global utilities + CSS Modules for scoped styles)  
 - **Linting:** ESLint with React, React Hooks, JSX a11y  
-- **Deployment:** Render  
+- **Deployment:** Render
 
 ---
 
@@ -44,63 +44,40 @@ npm run preview
 
 ---
 
-## 📦 Version History
+## 🚀 Version 2.5 Upgrade
 
-### Version 2.4 (2025-09-26) — **Content & Layout Polish**
-This release focused on content expansion and professional polish before backend integration.  
+This version refines and polishes the portfolio across multiple pages for better UX, accessibility, and professional presentation.
 
-#### 🏠 Home Page
-- Updated tagline to be more professional.  
-- CTA button changed to **“View Projects”** for clearer navigation.  
-- Improved semantic animation with Framer Motion variants.  
+### v2.4
+- **Home Page**
+  - Added animated rotating tagline under “Software Engineering Technology Student @ Centennial College.”  
+  - Improved reveal animation using Framer Motion variants.  
+- **Education Page**
+  - Expanded with more details from résumé.  
+  - Added Centennial College logo with rotation (upright on mobile).  
+  - Added “View Projects” button.  
+- **Contact Page**
+  - Polished form layout with cleaner spacing.  
+  - Auto-focus on first invalid input.  
+  - Stronger success message styling.  
+- **Global Styling**
+  - Extracted services CSS into `Services.module.css`.  
+  - Added global `:focus-visible` styles for accessibility.  
 
-#### 👤 About Page
-- Expanded biography with professional + personal details.  
-- Polished phrasing to reflect passion, career journey, and hobbies.  
-- Added ARIA labeling for resume download link.  
-- Consistent section layout with headshot styling.  
-
-#### 🎓 Education Page
-- Intergraded a clean About-style layout.  
-- Added **Centennial College logo** with vertical rotation.  
-- Expanded details: GPA, program highlights, team projects, UML deliverables, QA, Agile, Git, and DevOps.  
-- Added CTA button linking to **View Projects**.  
-
-#### 📬 Contact Page
-- Reworked layout into two clear sections:  
-  - **Contact Info** with icons + email, phone, location.  
-  - **Contact Form** with improved structure, error handling, and accessibility.  
-- Added introductory text (“Whether you’re looking to collaborate…”).  
-- Auto-focus on first invalid field when submitting.  
-- Refined color scheme for form and error summary.  
-
----
-
-### Version 2.3 (2025-09-25) — **Refactor & Accessibility**
-- Introduced **Framer Motion variants** for consistent animation.  
-- Added **search query highlighting** on Projects page.  
-- Improved SEO with `<meta>` description + theme-color.  
-- Added ARIA attributes (`aria-describedby`, `aria-hidden`).  
-- Accessibility improvements to skeleton loaders and error summary.  
-
-### Version 2.2 (Earlier) — **Architectural Refactor**
-- Migrated to **folder-per-component/page** structure.  
-- Adopted **CSS Modules** for scoped styles.  
-- Introduced custom hook `useProjects`.  
-- Added skeleton loaders and `OptimizedImage` component.  
+### v2.5
+- **Services Page**
+  - Service cards now include **logos/icons** for tech skills (React, Node.js, etc.).  
+  - Added services for **Custom PCs** and **Peer Mentorship** with visuals.  
+- **Education Page**
+  - Centennial logo rotation disabled on mobile for consistent display.  
 
 ---
 
 ## ✅ Roadmap
-- **Content Expansion:**  
-  - Expand **About Me** page further with values/philosophy.  
-  - Add more detailed **Project Details** (challenges, learnings).  
-  - Expand **Education** with certificates (e.g., Azure).  
 
 - **Visual Polish:**  
   - Add banner graphics for About and Services pages.  
-  - Incorporate technology logos (React, Node.js, etc.) into Services.  
-  - Replace placeholder project images with final screenshots.  
+  - Replace placeholder images with final logos for service page.  
 
 - **Full-Stack Integration:**  
   - Build Node.js/Express + MongoDB backend.  
