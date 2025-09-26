@@ -1,31 +1,26 @@
 /**
  * @file SiteLayout.jsx
  * @purpose Provides a shared page shell with a header, footer, and content area.
- * @author Alex Kachur
- * @since 2025-09-17
- * @description Implements a sticky footer layout using flexbox. The <Outlet /> 
- * component from React Router renders the active page content.
  */
-import { Outlet } from 'react-router-dom'
-import Navbar from './Navbar.jsx'
+import { Outlet } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar.jsx';
+import styles from './SiteLayout.module.css';
 
 export default function SiteLayout() {
     return (
-        // This div provides the sticky footer layout
-        <div className="app-layout">
+        <div className={styles.layout}>
             <header>
                 <Navbar />
             </header>
 
-            {/* The Outlet renders the current matched route's component */}
-            <main className="main">
+            <main className={styles.main}>
                 <Outlet />
             </main>
 
-            <footer className="footer">
-                <div className="container footer__inner">
+            <footer className={styles.footer}>
+                <div className={`container ${styles.footerInner}`}>
                     <small>© {new Date().getFullYear()} Alex Kachur • React & Node.js</small>
-                    <div className="footer__links">
+                    <div className={styles.footerLinks}>
                         <a href="https://github.com/AlexKachur98" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
                         <a href="https://linkedin.com/in/alex-kachur" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
                         <a href="/documents/resume.pdf" target="_blank" rel="noreferrer" aria-label="Download Resume">Resume</a>
@@ -33,5 +28,5 @@ export default function SiteLayout() {
                 </div>
             </footer>
         </div>
-    )
+    );
 }

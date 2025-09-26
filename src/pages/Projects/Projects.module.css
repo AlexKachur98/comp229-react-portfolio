@@ -1,0 +1,38 @@
+/*
+ * Projects.module.css
+ * Scoped styles for the project filter controls.
+ */
+.controls {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+@media (min-width: 720px) {
+    .controls {
+        grid-template-columns: 1fr auto;
+    }
+}
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.chip {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.chip:hover {
+    color: var(--text);
+    border-color: var(--brand);
+}
+.chipActive {
+    background: var(--brand);
+    color: #062320;
+    border-color: transparent;
+}

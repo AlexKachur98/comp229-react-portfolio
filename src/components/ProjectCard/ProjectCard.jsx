@@ -1,20 +1,21 @@
 /**
  * @file ProjectCard.jsx
- * @purpose A reusable card component to display a single project.
- * @description Shows a project's image, title, summary, and tags. Provides
- * action buttons to view details, a live demo, or the GitHub repository.
- * Includes accessibility features like lazy loading images and ARIA labels.
+ * @purpose A reusable, animatable card component for a single project.
  * @author Alex Kachur
  * @since 2025-09-17
+ * @description Displays project details and actions. Uses global card styles
+ * and Framer Motion for animations.
  */
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import OptimizedImage from '../OptimizedImage/OptimizedImage.jsx';
 
 export default function ProjectCard({ id, title, summary, tags = [], image, demo, github, download }) {
     return (
-        <article className="card" tabIndex={0}>
+        <motion.article className="card" tabIndex={0}>
             {image && (
                 <div className="card__media">
-                    <img src={image} alt={`${title} screenshot`} loading="lazy" />
+                    <OptimizedImage src={image} alt={`${title} screenshot`} loading="lazy" />
                 </div>
             )}
 
@@ -35,6 +36,6 @@ export default function ProjectCard({ id, title, summary, tags = [], image, demo
                     {github && <a className="btn" href={github} target="_blank" rel="noreferrer">GitHub</a>}
                 </div>
             </div>
-        </article>
-    )
+        </motion.article>
+    );
 }

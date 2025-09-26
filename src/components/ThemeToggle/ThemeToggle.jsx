@@ -9,25 +9,22 @@
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-
+    // Initialize state from localStorage or system preference as a fallback
     const [theme, setTheme] = useState(
-        localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        () => localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
     );
 
+    // Effect to apply changes whenever the theme state is updated
     useEffect(() => {
         document.body.dataset.theme = theme;
-
         localStorage.setItem('theme', theme);
 
+        // Dynamically update the favicon to match the theme
         let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-            link = document.createElement('link');
-            link.rel = 'icon';
-            document.head.appendChild(link);
+        if (link) {
+            link.href = `/images/favicon-${theme}.png`;
         }
-        link.href = `/images/favicon-${theme}.png`;
-
     }, [theme]);
 
     return (

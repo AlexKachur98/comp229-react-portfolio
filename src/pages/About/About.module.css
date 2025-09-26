@@ -1,0 +1,23 @@
+/*
+ * About.module.css
+ * Scoped styles for the About page layout.
+ */
+.about {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .about {
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.media {
+    justify-self: center;
+}
+
+.cta {
+    margin-top: 1rem;
+}
