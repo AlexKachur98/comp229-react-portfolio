@@ -1,6 +1,8 @@
 /*
- * Projects.module.css
- * Scoped styles for the project filter controls.
+ * @file Projects.module.css
+ * @purpose Scoped styles for project filter controls and chips. 
+ * @author Alex Kachur
+ * @since 2025-09-26
  */
 .controls {
     display: grid;
@@ -8,16 +10,19 @@
     grid-template-columns: 1fr;
     align-items: center;
 }
+
 @media (min-width: 720px) {
     .controls {
         grid-template-columns: 1fr auto;
     }
 }
+
 .chips {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
 .chip {
     padding: 8px 12px;
     border: 1px solid var(--border);
@@ -27,12 +32,19 @@
     cursor: pointer;
     transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
+
 .chip:hover {
     color: var(--text);
     border-color: var(--brand);
 }
+
 .chipActive {
     background: var(--brand);
     color: #062320;
     border-color: transparent;
+}
+
+.chip:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
 }

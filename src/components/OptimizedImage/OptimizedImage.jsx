@@ -1,22 +1,27 @@
 /**
  * @file OptimizedImage.jsx
- * @purpose Renders an image using the <picture> element for modern format support.
- * @author Alex Kachur
+ * @purpose Render an image with WebP optimization and fallback to original format. 
+ * @autho Alex Kachur
  * @since 2025-09-26
- * @description This component serves a .webp image source with a fallback to the
- * original image format, ensuring optimized images are delivered to capable
- * browsers while maintaining compatibility.
+ * @description Serves a modern WebP image when available, with automatic fallback 
+ * to the original .jpg/.png file if WebP is unsupported or missing.
  */
+import PropTypes from 'prop-types';
+
 export default function OptimizedImage({ src, alt, ...props }) {
-    // This automatically creates the .webp path from the original src prop
-    const webpSrc = src.replace(/\.(png|jpe?g)$/, '.webp');
+    // If source is JPG/PNG, try a .webp alternative
+    const isJpgOrPng = /\.(png|jpe?g)$/i.test(src);
+    const webpSrc = isJpgOrPng ? src.replace(/\.(png|jpe?g)$/i, '.webp') : null;
 
     return (
         <picture>
-            {/* The browser will try to load this .webp source first */}
-            <source srcSet={webpSrc} type="image/webp" />
-            {/* If it can't, it will fall back to the original .jpg or .png */}
+            {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
             <img src={src} alt={alt} {...props} />
         </picture>
     );
 }
+
+OptimizedImage.propTypes = {
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired
+};

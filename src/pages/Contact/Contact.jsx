@@ -1,12 +1,12 @@
 /**
  * @file Contact.jsx
- * @purpose Accessible, validated contact form with an error summary.
+ * @purpose Accessible, validated contact form with error summary and success state. 
  * @author Alex Kachur
  * @since 2025-09-17
- * @description Controlled inputs + validation. Includes a top-level error summary
- * for improved accessibility upon submission attempt.
+ * @description Controlled inputs with validation. Includes aria-describedby, 
+ * error summary for accessibility, and auto-focus on first invalid field.
  */
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
 import styles from './Contact.module.css';
 
@@ -17,6 +17,7 @@ export default function Contact() {
     const [touched, setTouched] = useState({});
     const [sent, setSent] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const firstErrorRef = useRef(null);
 
     const errors = useMemo(() => ({
         name: form.name.trim() ? '' : 'Name is required.',
@@ -40,6 +41,12 @@ export default function Contact() {
         setForm({ name: '', email: '', message: '' });
         setSubmitted(false);
     };
+
+    useEffect(() => {
+        if (submitted && !valid && firstErrorRef.current) {
+            firstErrorRef.current.focus();
+        }
+    }, [submitted, valid]);
 
     return (
         <AnimatedPage>
@@ -69,31 +76,51 @@ export default function Contact() {
                         <div className={styles.field}>
                             <label htmlFor="name">Name</label>
                             <input
-                                id="name" name="name"
+                                id="name"
+                                name="name"
                                 className={`${styles.input} ${touched.name && errors.name ? styles.inputError : ''}`}
-                                value={form.name} onChange={onChange} onBlur={onBlur} required
+                                value={form.name}
+                                onChange={onChange}
+                                onBlur={onBlur}
+                                aria-describedby={errors.name ? "name-error" : undefined}
+                                ref={!valid && errors.name ? firstErrorRef : null}
+                                required
                             />
-                            {touched.name && errors.name && <p className="error">{errors.name}</p>}
+                            {touched.name && errors.name && <p id="name-error" className="error">{errors.name}</p>}
                         </div>
 
                         <div className={styles.field}>
                             <label htmlFor="email">Email</label>
                             <input
-                                id="email" name="email" type="email"
+                                id="email"
+                                name="email"
+                                type="email"
                                 className={`${styles.input} ${touched.email && errors.email ? styles.inputError : ''}`}
-                                value={form.email} onChange={onChange} onBlur={onBlur} required
+                                value={form.email}
+                                onChange={onChange}
+                                onBlur={onBlur}
+                                aria-describedby={errors.email ? "email-error" : undefined}
+                                ref={!valid && errors.email ? firstErrorRef : null}
+                                required
                             />
-                            {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                            {touched.email && errors.email && <p id="email-error" className="error">{errors.email}</p>}
                         </div>
 
                         <div className={styles.field}>
                             <label htmlFor="message">Message</label>
                             <textarea
-                                id="message" name="message" rows={6}
+                                id="message"
+                                name="message"
+                                rows={6}
                                 className={`${styles.input} ${styles.textarea} ${touched.message && errors.message ? styles.inputError : ''}`}
-                                value={form.message} onChange={onChange} onBlur={onBlur} required
+                                value={form.message}
+                                onChange={onChange}
+                                onBlur={onBlur}
+                                aria-describedby={errors.message ? "message-error" : undefined}
+                                ref={!valid && errors.message ? firstErrorRef : null}
+                                required
                             />
-                            {touched.message && errors.message && <p className="error">{errors.message}</p>}
+                            {touched.message && errors.message && <p id="message-error" className="error">{errors.message}</p>}
                         </div>
 
                         <button className="btn btn--primary" disabled={submitted && !valid}>Send Message</button>

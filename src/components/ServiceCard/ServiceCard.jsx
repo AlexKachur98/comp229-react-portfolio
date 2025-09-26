@@ -1,14 +1,15 @@
 /**
  * @file ServiceCard.jsx
- * @purpose A reusable UI card for displaying a single service.
+ * @purpose A reusable UI card for displaying a single service offering. 
  * @author Alex Kachur
  * @since 2025-09-17
- * @description A simple presentational component that receives props and renders them
- * using the global utility styles for cards.
+ * @description Simple presentational component styled using global .card utilities. 
+ * Receives a title and description as props.
  */
+import PropTypes from 'prop-types';
+
 export default function ServiceCard({ title, description }) {
     return (
-        // This component is styled using the global .card utility classes
         <article className="card">
             <div className="card__body">
                 <h3 className="card__title">{title}</h3>
@@ -17,3 +18,8 @@ export default function ServiceCard({ title, description }) {
         </article>
     );
 }
+
+ServiceCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+};

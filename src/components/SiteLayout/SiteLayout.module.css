@@ -1,6 +1,8 @@
 /*
- * SiteLayout.module.css
- * Scoped styles for the main application layout (sticky footer).
+ * @file SiteLayout.module.css
+ * @purpose Scoped styles for the main application layout.
+ * @author Alex Kachur
+ * @since 2025-09-26
  */
 .layout {
     display: flex;
@@ -31,4 +33,9 @@
 .footerLinks {
     display: flex;
     gap: 16px;
+}
+
+.footerLinks a:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
 }

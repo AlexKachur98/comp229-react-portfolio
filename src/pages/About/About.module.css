@@ -1,6 +1,8 @@
 /*
- * About.module.css
- * Scoped styles for the About page layout.
+ * @file About.module.css
+ * @purpose Scoped styles for the About page layout. 
+ * @author Alex Kachur
+ * @since 2025-09-26
  */
 .about {
     display: grid;
@@ -20,4 +22,9 @@
 
 .cta {
     margin-top: 1rem;
+}
+
+.headshot {
+    border-radius: 50%;
+    box-shadow: var(--shadow);
 }

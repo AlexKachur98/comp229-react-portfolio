@@ -1,3 +1,8 @@
+# @file .gitignore
+# @purpose Ignore logs, build output, dependencies, and IDE-specific files. 
+# @author Alex Kachur
+# @since 2025-09-17
+
 # Logs
 logs
 *.log
@@ -7,10 +12,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build
 dist
 dist-ssr
 *.local
+
+# Env files
+.env
+.env.*.local
 
 # Editor directories and files
 .vscode/*

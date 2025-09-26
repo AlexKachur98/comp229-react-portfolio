@@ -1,9 +1,10 @@
 /**
  * @file About.jsx
- * @purpose Renders the professional bio and introduction page.
+ * @purpose Professional bio and introduction page. 
  * @author Alex Kachur
  * @since 2025-09-17
- * @description Uses Framer Motion for page transitions and CSS Modules for styling.
+ * @description Displays headshot, personal summary, and a resume download link. 
+ * Uses Framer Motion page wrapper and CSS Modules for styling.
  */
 import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage.jsx';
@@ -19,12 +20,14 @@ export default function About() {
                         alt="Alex Kachur headshot"
                         width="180"
                         height="180"
-                        style={{ borderRadius: '50%' }}
+                        className={styles.headshot}
                     />
                 </div>
 
-                <div className="flow">
-                    <h2>About Me</h2>
+                <section className="flow">
+                    <header>
+                        <h2>About Me</h2>
+                    </header>
                     <p className="lead">
                         I’m a Software Engineering Technology student at Centennial College who loves building cool projects
                         and sharpening skills in coding, databases, and web development.
@@ -35,11 +38,17 @@ export default function About() {
                         technical skills with my passions.
                     </p>
                     <div className={styles.cta}>
-                        <a className="btn btn--primary" href="/documents/resume.pdf" target="_blank" rel="noreferrer">
+                        <a
+                            className="btn btn--primary"
+                            href="/documents/resume.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Download Alex Kachur's resume in PDF format"
+                        >
                             Download Resume
                         </a>
                     </div>
-                </div>
+                </section>
             </div>
         </AnimatedPage>
     );
