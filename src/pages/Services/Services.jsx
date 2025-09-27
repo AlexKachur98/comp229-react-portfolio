@@ -3,8 +3,7 @@
  * @purpose Showcases offered services in card layout with tech logos. 
  * @author Alex Kachur
  * @since 2025-09-26
- * @description Uses ServiceCard component with mapped data array. 
- * Logos are stored under /public/images/icons.
+ * @updated 2025-09-27 Added database, Git, and custom service icons for polish.
  */
 import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
 import ServiceCard from '../../components/ServiceCard/ServiceCard.jsx';
@@ -14,7 +13,7 @@ const services = [
     {
         title: 'General Programming',
         description: 'C#, Java, Python — clean, readable problem solving.',
-        logo: '/images/icons/csharp.svg'
+        logo: '/images/icons/python.svg'
     },
     {
         title: 'Web Development',
@@ -34,7 +33,7 @@ const services = [
     {
         title: 'Custom PCs',
         description: 'Parts selection, builds, optimization — budget to high-end rigs.',
-        logo: '/images/icons/pc.svg'
+        logo: '/images/icons/custom-pc.svg'
     },
     {
         title: 'Peer Mentorship',

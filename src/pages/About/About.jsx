@@ -30,7 +30,7 @@ export default function About() {
 
                     {/* Intro */}
                     <p className="lead">
-                        Hi, I’m Alex — a Software Engineering Technology student at Centennial College with a passion for
+                        Hi, I’m Alex, a Software Engineering Technology student at Centennial College with a passion for
                         building modern web applications and exploring emerging technologies.
                     </p>
 
@@ -38,7 +38,7 @@ export default function About() {
                     <section>
                         <h3>My Journey</h3>
                         <p>
-                            My love for technology started young — I was the kid taking apart radios and asking what every part did.
+                            My love for technology started young, I was the kid taking apart radios and DVDs asking what every part did.
                             During COVID, I rediscovered coding through a free HTML course, and it felt like magic to create something
                             from nothing. That spark grew into a full commitment when I joined Centennial, where I’ve built console
                             games in C#, designed UML diagrams, and developed React applications from the ground up.
@@ -61,7 +61,7 @@ export default function About() {
                         <h3>Beyond Coding</h3>
                         <p>
                             Outside of development, I’m passionate about gaming (video and board), sports (NBA, NFL, MMA),
-                            and building custom PCs — from budget builds to high-end water-cooled systems. I’m also a lifelong animal
+                            and building custom PCs, from budget builds to high-end water-cooled systems. I’m also a lifelong animal
                             lover; I share my life with two cats, Moura and Simba, and my dream is to one day open an animal rescue ranch.
                         </p>
                     </section>

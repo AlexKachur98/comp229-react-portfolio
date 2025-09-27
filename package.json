@@ -1,7 +1,7 @@
 {
   "name": "react-portfolio",
   "private": true,
-  "version": "2.3.0",
+  "version": "2.6.0",
   "author": "Alex Kachur",
   "description": "React portfolio website for COMP229 Web Application Development at Centennial College.",
   "keywords": [
@@ -17,7 +17,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview --host 0.0.0.0 --port 8080"
+    "preview": "vite preview --host 0.0.0.0 --port 8080",
+    "icons": "node scripts/export-icons.mjs",
+    "optimize-icons": "node scripts/optimize-icons.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
