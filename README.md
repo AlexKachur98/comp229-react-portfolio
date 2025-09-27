@@ -1,6 +1,7 @@
 # Alex Kachur - React Portfolio (COMP229)
 
-This is my personal portfolio website, built as a project for the COMP229 Web Application Development course at Centennial College. It's a modern, responsive single-page application (SPA) created with React, Vite, and a professional, scalable project architecture.
+This is my personal portfolio website, built as a project for the COMP229 Web Application Development course at Centennial College.  
+It’s a modern, responsive single-page application (SPA) created with React, Vite, and a professional, scalable project architecture.
 
 **Live Demo:** [`https://comp229-react-portfolio-1d8e.onrender.com`](https://comp229-react-portfolio-1d8e.onrender.com)
 
@@ -14,6 +15,7 @@ This is my personal portfolio website, built as a project for the COMP229 Web Ap
 * **Professional Loading State** — Skeleton loaders prevent layout shift and improve perceived performance.  
 * **Enhanced Accessibility** — ARIA roles, keyboard focus management, and an error summary on the contact form.  
 * **Optimized Images** — Modern WebP served with `<picture>` and fallbacks for older browsers.  
+* **Custom Service Icons** — Clean, handcrafted SVGs that adapt to light/dark mode via `currentColor`.  
 
 ---
 
@@ -21,7 +23,8 @@ This is my personal portfolio website, built as a project for the COMP229 Web Ap
 - **Frontend:** React 18, Vite, React Router v6, Framer Motion  
 - **Styling:** Hybrid CSS (global utilities + CSS Modules for scoped styles)  
 - **Linting:** ESLint with React, React Hooks, JSX a11y  
-- **Deployment:** Render
+- **Deployment:** Render  
+- **Assets:** Custom SVG icons (handcrafted, theme-aware)  
 
 ---
 
@@ -44,9 +47,7 @@ npm run preview
 
 ---
 
-## 🚀 Version 2.5 Upgrade
-
-This version refines and polishes the portfolio across multiple pages for better UX, accessibility, and professional presentation.
+## 🚀 Changelog
 
 ### v2.4
 - **Home Page**
@@ -71,13 +72,24 @@ This version refines and polishes the portfolio across multiple pages for better
 - **Education Page**
   - Centennial logo rotation disabled on mobile for consistent display.  
 
+### v2.6
+- **Icons**
+  - Replaced auto-generated icons with **custom handcrafted SVGs** in `/public/images/icons`.  
+  - All icons normalized with `fill="currentColor"` to auto-adapt to light/dark themes.  
+- **Cleanup**
+  - Removed unused scripts (`scripts/export-icons.mjs`, `.svgo.config.cjs`).  
+  - Removed unnecessary devDependencies (`simple-icons`, `svgo`).  
+- **Services Update**
+  - Services page finalized with consistent custom icons.  
+  - Icons now sized and styled via `Services.module.css`.  
+
 ---
 
 ## ✅ Roadmap
-
 - **Visual Polish:**  
-  - Add banner graphics for About and Services pages.  
-  - Replace placeholder images with final logos for service page.  
+  - Add subtle hover animations for service logos.
+  - Add scroll reveal animation for about page.
+  - Add full 3D interative logo for home page.  
 
 - **Full-Stack Integration:**  
   - Build Node.js/Express + MongoDB backend.  
