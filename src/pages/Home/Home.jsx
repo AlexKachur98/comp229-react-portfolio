@@ -1,18 +1,19 @@
 /**
  * @file Home.jsx
- * @purpose Hero landing page with clean staggered reveal animation. 
+ * @purpose Hero landing page with staggered reveal animation + interactive logo. 
  * @author Alex Kachur
- * @since 2025-09-26
- * @description Uses Framer Motion variants for container + child elements 
- * so name, subtitle, tagline, and CTAs animate in sequence.
+ * @since 2025-09-17
+ * @description Uses Framer Motion container + child variants, rotating taglines,
+ * and includes InteractiveLogo as a free-floating companion across the viewport.
  */
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
+import InteractiveLogo from '../../components/ui/InteractiveLogo/InteractiveLogo.jsx';
 import styles from './Home.module.css';
 
-// 🔹 Container: stagger children
+// Container: stagger children
 const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -23,13 +24,13 @@ const containerVariants = {
     }
 };
 
-// 🔹 Child elements: slide up + fade in
+// Child elements: slide up + fade in
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-// 🔹 Rotating professional + personal taglines
+// Rotating professional + personal taglines
 const taglines = [
     "Building elegant solutions with React & Node.js",
     "Turning ideas into scalable web applications",
@@ -85,6 +86,9 @@ export default function Home() {
                     <Link to="/about" className="btn">About Me</Link>
                 </motion.div>
             </motion.div>
+
+            {/* Free-floating interactive logo (companion) */}
+            <InteractiveLogo />
         </AnimatedPage>
     );
 }

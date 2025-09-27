@@ -9,9 +9,9 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useProjects } from '../../hooks/useProjects.js';
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
-import ProjectCard from '../../components/ProjectCard/ProjectCard.jsx';
-import ProjectCardSkeleton from '../../components/ProjectCard/ProjectCardSkeleton.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
+import ProjectCard from '../../components/ui/ProjectCard/ProjectCard.jsx';
+import ProjectCardSkeleton from '../../components/ui/ProjectCard/ProjectCardSkeleton.jsx';
 import styles from './Projects.module.css';
 
 const TAGS = ['all', 'react', 'node', 'design', 'c#', 'javascript', 'jquery', 'uml', 'requirements'];

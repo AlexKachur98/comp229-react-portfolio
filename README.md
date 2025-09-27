@@ -16,6 +16,7 @@ It’s a modern, responsive single-page application (SPA) created with React, Vi
 * **Enhanced Accessibility** — ARIA roles, keyboard focus management, and an error summary on the contact form.  
 * **Optimized Images** — Modern WebP served with `<picture>` and fallbacks for older browsers.  
 * **Custom Service Icons** — Clean, handcrafted SVGs that adapt to light/dark mode via `currentColor`.  
+* **3D Interactive Logo** — A draggable, animated companion logo on the Home page.  
 
 ---
 
@@ -83,14 +84,16 @@ npm run preview
   - Services page finalized with consistent custom icons.  
   - Icons now sized and styled via `Services.module.css`.  
 
+### v2.7
+- **Home Page**
+  - Added **3D interactive logo**: draggable, animated companion positioned above footer.  
+- **Restructure**
+  - Restructured file map to align with professional best practices.  
+  - Cleaned up code comments and improved consistency across all files.  
+
 ---
 
 ## ✅ Roadmap
-- **Visual Polish:**  
-  - Add subtle hover animations for service logos.
-  - Add scroll reveal animation for about page.
-  - Add full 3D interative logo for home page.  
-
 - **Full-Stack Integration:**  
   - Build Node.js/Express + MongoDB backend.  
   - Expose CRUD API for projects and wire frontend to it.  

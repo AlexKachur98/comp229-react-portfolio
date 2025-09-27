@@ -1,0 +1,53 @@
+/*
+ * @file InteractiveLogo.module.css
+ * @purpose Styles for the InteractiveLogo companion component. 
+ * @author Alex Kachur
+ * @since 2025-09-26
+ */
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 36px;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    z-index: 9999;
+    box-shadow: 0 12px 32px rgba(20, 184, 166, 0.42);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+}
+
+.logo:active {
+    cursor: grabbing;
+}
+
+/* Subtle pulsing glow to hint interactivity */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0px rgba(20, 184, 166, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(20, 184, 166, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 0px rgba(20, 184, 166, 0.7);
+    }
+}
+
+.logo {
+    animation: pulse 3s infinite;
+}

@@ -6,11 +6,11 @@
  * @updated 2025-09-27 Updated to render logos beside titles (more professional).
  */
 import PropTypes from 'prop-types';
-import styles from '../../pages/Services/Services.module.css';
+import styles from './ServiceCard.module.css';
 
 export default function ServiceCard({ title, description, logo }) {
     return (
-        <article className="card">
+        <article className={`card ${styles.card}`}>
             <div className="card__body">
                 <div className={styles.header}>
                     {logo && (

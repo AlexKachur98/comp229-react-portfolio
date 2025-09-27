@@ -8,8 +8,8 @@
  */
 import { useParams, Link } from 'react-router-dom';
 import { useProjects } from '../../hooks/useProjects.js';
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
-import OptimizedImage from '../../components/OptimizedImage/OptimizedImage.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
+import OptimizedImage from '../../components/ui/OptimizedImage/OptimizedImage.jsx';
 
 export default function ProjectDetails() {
     const { id } = useParams();

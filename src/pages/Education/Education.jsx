@@ -6,10 +6,12 @@
  * @description Includes Centennial College program details, GPA, highlights, and a 
  * call-to-action button linking to Projects page.
  */
+
 import { Link } from 'react-router-dom';
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
-import OptimizedImage from '../../components/OptimizedImage/OptimizedImage.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
+import OptimizedImage from '../../components/ui/OptimizedImage/OptimizedImage.jsx';
 import styles from './Education.module.css';
+
 
 export default function Education() {
     return (

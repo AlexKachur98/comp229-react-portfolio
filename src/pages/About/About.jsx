@@ -5,8 +5,8 @@
  * @since 2025-09-17
  * @description Structured with multiple sections for narrative, values, and personality.
  */
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
-import OptimizedImage from '../../components/OptimizedImage/OptimizedImage.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
+import OptimizedImage from '../../components/ui/OptimizedImage/OptimizedImage.jsx';
 import styles from './About.module.css';
 
 export default function About() {

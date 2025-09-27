@@ -1,0 +1,28 @@
+/*
+ * @file ServiceCard.module.css
+ * @purpose Scoped styles for the ServiceCard component. 
+ * @autho Alex Kachur
+ * @since 2025-09-26
+ */
+
+.card {
+    transition: transform 160ms ease;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    transition: transform 160ms ease;
+}
+
+.card:hover .logo {
+    transform: translateY(-2px);
+}

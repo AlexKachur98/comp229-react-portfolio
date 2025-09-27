@@ -7,7 +7,7 @@
  * Wrapped in AnimatedPage for consistent transitions.
  */
 import { Link } from 'react-router-dom';
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
 
 export default function NotFound() {
     return (

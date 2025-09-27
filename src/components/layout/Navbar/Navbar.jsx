@@ -8,7 +8,7 @@
  */
 import { useState, useRef, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
+import ThemeToggle from '../../ui/ThemeToggle/ThemeToggle.jsx';
 import styles from './Navbar.module.css';
 
 const navClass = ({ isActive }) => `${styles.link} ${isActive ? styles.linkActive : ''}`;

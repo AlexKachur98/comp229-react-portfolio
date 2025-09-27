@@ -8,7 +8,7 @@
  */
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
 import styles from './Contact.module.css';
 
 const emailOk = (v) => /\S+@\S+\.\S+/.test(v);

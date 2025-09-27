@@ -5,8 +5,8 @@
  * @since 2025-09-26
  * @updated 2025-09-27 Added database, Git, and custom service icons for polish.
  */
-import AnimatedPage from '../../components/AnimatedPage/AnimatedPage.jsx';
-import ServiceCard from '../../components/ServiceCard/ServiceCard.jsx';
+import AnimatedPage from '../../components/layout/AnimatedPage/AnimatedPage.jsx';
+import ServiceCard from '../../components/ui/ServiceCard/ServiceCard.jsx';
 import styles from './Services.module.css';
 
 const services = [

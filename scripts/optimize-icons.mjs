@@ -10,6 +10,23 @@ import { optimize } from 'svgo'
 
 const iconsDir = path.resolve('./public/images/icons')
 
+const svgoConfig = {
+    multipass: true,
+    plugins: [
+        {
+            name: 'preset-default',
+            params: {
+                overrides: {
+                    removeViewBox: false,
+                    cleanupIDs: false
+                }
+            }
+        },
+        'removeDimensions',
+        'sortAttrs'
+    ]
+}
+
 const files = readdirSync(iconsDir).filter(f => f.endsWith('.svg'))
 
 for (const file of files) {
@@ -18,7 +35,7 @@ for (const file of files) {
 
     const result = optimize(rawSvg, {
         path: filePath,
-        configFile: './.svgo.config.cjs'
+        ...svgoConfig
     })
 
     writeFileSync(filePath, result.data, 'utf-8')
